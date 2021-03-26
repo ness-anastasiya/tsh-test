@@ -1,14 +1,27 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import { Typography, Grid } from "@material-ui/core";
+import { theme } from "../../theme";
 
 const useStyles = makeStyles({
   root: {
-    margin: "15% auto",
-    width: "600px",
-    height: "344px",
+    width: "340px",
+    height: "340px",
+    margin: "7% auto",
+    background: theme.palette.background.default,
+    [theme.breakpoints.up("sm")]: {
+      width: "600px",
+    },
   },
-  content: {},
+  content: {
+    margin: "30% 2%",
+    [theme.breakpoints.up("sm")]: {
+      margin: "15% 2%",
+    },
+  },
+  header: {
+    margin: "20px 0 4px 0"
+  }
 });
 
 export const EmptyCard = () => {
@@ -16,7 +29,13 @@ export const EmptyCard = () => {
 
   return (
     <Card className={classes.root}>
-      <Grid container direction="column" justify="center" alignItems="center">
+      <Grid 
+        container 
+        direction="column" 
+        justify="center" 
+        alignItems="center"
+        className={classes.content}
+      >
           <svg
             width="38"
             height="48"
@@ -34,10 +53,10 @@ export const EmptyCard = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography variant="h3" className={classes.header}>
             Ooops... It's empty here
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="subtitle1">
             There are no products on the list
           </Typography>
       </Grid>

@@ -6,28 +6,47 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core";
-
+import { theme } from "../../theme";
 import CloseIcon from "@material-ui/icons/Close";
-
-import lostImage from "../../img/product.jpg";
+import lostImage from "../../img/product.png";
 
 const useStyles = makeStyles({
   wrapper: {
+    height: "600px",
+    wigth: "530px",
     borderRadius: "8px",
+    marginTop: "22%",
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "10%"
+    },
   },
   root: {
-    margin: 0,
     padding: 0,
+    backgroundSize: "cover",
+    overflow: "hidden",
+
   },
   closeButton: {
     position: "absolute",
     right: 0,
     top: 0,
-  
+  },
+  img: {
+    height: "370px",
+    width: "600px",
+    overflow: "hidden",
+    objectFit: "cover"
   },
   article: {
-    padding: "10px",
+    height: "175px",
+    overflow: "hidden",
+    padding: "4% 5%",
+    background: theme.palette.background.default,
   },
+  description: {
+    lineHeight: "24px",
+    marginTop: "2%"
+  }
 });
 
 type ModalDescriptionProps = {
@@ -51,7 +70,7 @@ export const ModalDescription: React.FC<ModalDescriptionProps> = ({
       open={open} 
       onClose={handleClose} 
       className={classes.wrapper}
-      BackdropProps={{ style: { opacity: "0.4" } }}
+      BackdropProps={{ style: { opacity: 0.4 } }}
       >
         <IconButton
           className={classes.closeButton}
@@ -61,11 +80,11 @@ export const ModalDescription: React.FC<ModalDescriptionProps> = ({
         </IconButton>
         <DialogContent className={classes.root}>
           <div>
-            <img src={lostImage} width="100%" alt="Product" />
+            <img src={lostImage} className={classes.img} alt="Product" />
           </div>
           <div className={classes.article}>
-            <Typography gutterBottom>{title}</Typography>
-            <Typography gutterBottom>{description}</Typography>
+            <Typography variant="h2">{title}</Typography>
+            <Typography variant="h4" className={classes.description}>{description}</Typography>
           </div>
         </DialogContent>
       </Dialog>

@@ -31,8 +31,8 @@ export const PRODUCT_COLLECTION = [
     description:
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
-    isInStock: false,
-    isPromo: false,
+    isInStock: true,
+    isPromo: true,
   },
   {
     id: "4",
@@ -40,8 +40,8 @@ export const PRODUCT_COLLECTION = [
     description:
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
-    isInStock: true,
-    isPromo: true,
+    isInStock: false,
+    isPromo: false,
   },
   {
     id: "5",
@@ -50,7 +50,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "6",
@@ -76,8 +76,8 @@ export const PRODUCT_COLLECTION = [
     description:
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
-    isInStock: false,
-    isPromo: false,
+    isInStock: true,
+    isPromo: true,
   },
   {
     id: "9",
@@ -86,7 +86,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "10",
@@ -95,7 +95,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "11",
@@ -140,7 +140,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "16",
@@ -167,7 +167,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: false,
-    isPromo: false,
+    isPromo: true,
   },
   {
     id: "19",
@@ -176,7 +176,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "20",
@@ -185,7 +185,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "21",
@@ -194,7 +194,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 0,
     isInStock: true,
-    isPromo: false,
+    isPromo: true,
   },
   {
     id: "22",
@@ -221,7 +221,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "25",
@@ -239,7 +239,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: false,
+    isPromo: true,
   },
   {
     id: "27",
@@ -248,7 +248,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
     isInStock: true,
-    isPromo: false,
+    isPromo: true,
   },
   {
     id: "28",
@@ -266,7 +266,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "30",
@@ -275,7 +275,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "31",
@@ -293,7 +293,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "33",
@@ -302,7 +302,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "34",
@@ -338,7 +338,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "38",
@@ -347,7 +347,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "39",
@@ -383,7 +383,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "43",
@@ -392,7 +392,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "44",
@@ -428,7 +428,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "48",
@@ -437,7 +437,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "49",
@@ -446,7 +446,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 4,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "50",
@@ -455,7 +455,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: true,
-    isPromo: true,
+    isPromo: false,
   },
 
 ];

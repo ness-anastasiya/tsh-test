@@ -44,9 +44,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     searchField: {
       color: theme.palette.text.primary,
+      // border: "1px solid #E0E2EA",
       fontSize: "14px",
       height: "48px",
-      border: "1px solid #E0E2EA",
       borderRadius: "8px",
       maxWidth: "400px",
     },
@@ -102,10 +102,15 @@ export const ToolBar: React.FC<ToolBarProps> = ({
         className={classes.container}
       >
         <Hidden mdUp>
-        <Grid container direction="row" justify="space-between" alignItems="center">
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="center"
+          >
             <Typography variant="h2">join.tsh.io</Typography>
             <AvatarImg handleClick={handleClick} />
-        </Grid>
+          </Grid>
         </Hidden>
 
         <Hidden smDown>
@@ -139,9 +144,50 @@ export const ToolBar: React.FC<ToolBarProps> = ({
                     onChange={handleChangeState}
                     name="isActive"
                     color="primary"
-                    style={{
-                      transform: "scale(1.2)",
-                    }}
+                    icon={
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          x="0.5"
+                          y="0.5"
+                          width="23"
+                          height="23"
+                          rx="3.5"
+                          fill="white"
+                          stroke="#E0E2EA"
+                        />
+                      </svg>
+                    }
+                    checkedIcon={
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="24" height="24" rx="4" fill="#4460F7" />
+                        <svg
+                          width="12"
+                          height="10"
+                          viewBox="0 0 12 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="6"
+                          y="7"
+                        >
+                          <path
+                            d="M4.0001 7.7799L1.2201 4.9999L0.273438 5.9399L4.0001 9.66656L12.0001 1.66656L11.0601 0.726562L4.0001 7.7799Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </svg>
+                    }
                   />
                 }
                 label={<Typography variant="body1">Active</Typography>}
@@ -153,9 +199,51 @@ export const ToolBar: React.FC<ToolBarProps> = ({
                     onChange={handleChangeState}
                     name="isPromo"
                     color="primary"
-                    style={{
-                      transform: "scale(1.2)",
-                    }}
+                    icon={
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          x="0.5"
+                          y="0.5"
+                          width="23"
+                          height="23"
+                          rx="3.5"
+                          fill="white"
+                          stroke="#E0E2EA"
+                        />
+                      </svg>
+                    }
+                    checkedIcon={
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="24" height="24" rx="4" fill="#4460F7" />
+                        <svg
+                          width="12"
+                          height="10"
+                          viewBox="0 0 12 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="6"
+                          y="7"
+                        >
+                          <path
+                            d="M4.0001 7.7799L1.2201 4.9999L0.273438 5.9399L4.0001 9.66656L12.0001 1.66656L11.0601 0.726562L4.0001 7.7799Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </svg>
+                    }
+
                   />
                 }
                 label={<Typography variant="body1">Promo</Typography>}

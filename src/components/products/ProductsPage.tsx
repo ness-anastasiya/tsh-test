@@ -18,18 +18,15 @@ import { ToolBar } from "./ToolBar";
 import { ModalDescription } from "./ModalDescription";
 import { EmptyCard } from "./EmptyCard";
 
-// import productCollection from "../../products.json";
-
-// console.log(productCollection);
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     wrapper: {
       maxHeight: "100vh",
       maxWidth: "100vw",
-      background: "#F2F2F2",
+      background: theme.palette.background.paper,
       display: "flex",
       flexDirection: "column",
+      overflow: "auto",
     },
     paper: {
       height: "100vh",
@@ -43,8 +40,11 @@ const useStyles = makeStyles((theme: Theme) =>
     contentContainer: {
       width: "100%",
       height: "100hv",
-      padding: "1% 15%",
+      padding: "1% 5%",
       margin: 0,
+      [theme.breakpoints.up("lg")]: {
+        padding: "1% 15%",
+      },
     },
     paginationContainer: {
       paddingBottom: "3%",
@@ -79,21 +79,24 @@ export const ProductsPage = () => {
   const [modalData, setModalData] = React.useState({
     open: false,
     title: "",
-    description: ""
+    description: "",
   });
   const handleShowDetails = (e: React.MouseEvent) => {
-    const targetProduct = PRODUCT_COLLECTION.find(product => product.id === e.currentTarget.id);
-    targetProduct && setModalData({
-      open: true,
-      title: targetProduct.title,
-      description: targetProduct.description  
-    });
+    const targetProduct = PRODUCT_COLLECTION.find(
+      (product) => product.id === e.currentTarget.id
+    );
+    targetProduct &&
+      setModalData({
+        open: true,
+        title: targetProduct.title,
+        description: targetProduct.description,
+      });
   };
   const handleCloseDetails = () => {
     setModalData({
       open: false,
       title: "",
-      description: ""  
+      description: "",
     });
   };
 
@@ -136,38 +139,37 @@ export const ProductsPage = () => {
               .slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
               .map((item) => {
                 return (
-                    <ListItem
+                  <ListItem
+                    id={item.id}
+                    component={Grid}
+                    container
+                    item
+                    key={item.id}
+                    md={3}
+                    wrap="wrap"
+                  >
+                    <Item
                       id={item.id}
-                      component={Grid}
-                      container
-                      item
-                      key={item.id}
-                      md={3}
-                      button
-                    >
-                      <Item
-                        id={item.id}
-                        title={item.title}
-                        description={item.description}
-                        rating={item.rating}
-                        isInStock={item.isInStock}
-                        isPromo={item.isPromo}
-                        onClick={handleShowDetails}
-                      ></Item>
-                    </ListItem>
+                      title={item.title}
+                      description={item.description}
+                      rating={item.rating}
+                      isInStock={item.isInStock}
+                      isPromo={item.isPromo}
+                      onClick={handleShowDetails}
+                    ></Item>
+                    <ModalDescription
+                      open={modalData.open}
+                      title={modalData.title}
+                      description={modalData.description}
+                      handleClose={handleCloseDetails}
+                    />
+                  </ListItem>
                 );
               })}
           </List>
         ) : (
           <EmptyCard />
         )}
-
-        <ModalDescription
-          open={modalData.open}
-          title={modalData.title}
-          description={modalData.description}
-          handleClose={handleCloseDetails}
-        />
         <Grid className={classes.paginationContainer}>
           {filteredList.length > ITEMS_PER_PAGE && (
             <Pagination

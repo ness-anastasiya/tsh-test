@@ -52,7 +52,7 @@ const useStyles = makeStyles({
     color: theme.palette.text.secondary,
     fontSize: "14px",
     height: "48px",
-    border: "1px solid #E0E2EA",
+    // border: "1px solid #E0E2EA",
     borderRadius: "8px",
     maxWidth: "500px",
   },

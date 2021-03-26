@@ -1,49 +1,65 @@
 import React from "react";
+import clsx from 'clsx';
 import { makeStyles, Grid } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-import productImg from "../../img/product.jpg";
+import productImg from "../../img/product.png";
 import { renderRating } from "../helpers/ratingHelper";
+import { theme } from "../../theme";
 
 const useStyles = makeStyles({
   root: {
     width: "260px",
     height: "340px",
     borderRadius: "8px",
+    margin: "auto"
   },
   media: {
-    height: "145px",
+    height: "140px",
+  },
+  promoMedia: {
+    height: "140px",
+    filter: "grayscale(100%)"
   },
   content: {
-    height: "80px",
-  },
-  action: {
-    height: "35px",
+    height: "200px",
+    padding: "5%",
+    background: theme.palette.background.default
   },
   button: {
     textTransform: "unset",
+    height: "35px",
   },
   promoLabelContainer: {
     position: "relative",
     top: "10px",
     left: 0,
     width: "75px",
-    height: "24px",
-    background: "#F9A52B",
+    height: "22px",
+    background: theme.palette.secondary.main,
   },
   promoLabelTitle: {
     matgin: 0,
+    color: theme.palette.text.hint,
   },
-  description: {
+  title: {
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
+    height: "25px",
+  },
+  description: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    height: "80px",
+    lineHeight: "16px",
+  },
+  rating: {
+    height: "30px",
   },
 });
 
@@ -54,7 +70,7 @@ type ItemProps = {
   rating: number;
   isInStock: boolean;
   isPromo: boolean;
-  onClick: (e: React.MouseEvent) => void
+  onClick: (e: React.MouseEvent) => void;
 };
 
 export const Item: React.FC<ItemProps> = ({
@@ -64,49 +80,38 @@ export const Item: React.FC<ItemProps> = ({
   rating,
   isInStock,
   isPromo,
-  onClick
+  onClick,
 }) => {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={productImg}
-          title="Contemplative Reptile"
-        >
-          {isPromo && (
-            <Grid
-              container
-              justify="center"
-              className={classes.promoLabelContainer}
-            >
-              <Typography className={classes.promoLabelTitle}>Promo</Typography>
-            </Grid>
-          )}
-        </CardMedia>
-        <CardContent className={classes.content}>
-          <Typography
-            gutterBottom
-            variant="body1"
-            color="textPrimary"
-            component="p"
+      <CardMedia
+        className={clsx({
+          [classes.media]: isInStock,
+          [classes.promoMedia]: !isInStock
+        })}
+        image={productImg}
+        title="Contemplative Reptile"
+      >
+        {isPromo && (
+          <Grid
+            container
+            justify="center"
+            className={classes.promoLabelContainer}
           >
-            {title}
-          </Typography>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            component="p"
-            className={classes.description}
-          >
-            {description}
-          </Typography>
-          <div>{renderRating(rating)}</div>
-        </CardContent>
-      </CardActionArea>
-      <CardActions className={classes.action}>
+            <Typography className={classes.promoLabelTitle}>Promo</Typography>
+          </Grid>
+        )}
+      </CardMedia>
+      <CardContent className={classes.content}>
+        <Typography variant="h3" className={classes.title}>
+          {title}
+        </Typography>
+        <Typography variant="subtitle1" className={classes.description}>
+          {description}
+        </Typography>
+        <div className={classes.rating}>{renderRating(rating)}</div>
         {isInStock ? (
           <Button
             id={id}
@@ -129,7 +134,7 @@ export const Item: React.FC<ItemProps> = ({
             Unavailable
           </Button>
         )}
-      </CardActions>
+      </CardContent>
     </Card>
   );
 };
