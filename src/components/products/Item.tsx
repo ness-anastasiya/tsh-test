@@ -1,34 +1,37 @@
 import React from "react";
-import clsx from 'clsx';
-import { makeStyles, Grid } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import clsx from "clsx";
+import {
+  makeStyles,
+  Grid,
+  Card,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography,
+} from "@material-ui/core";
 
-import productImg from "../../img/product.png";
-import { renderRating } from "../helpers/ratingHelper";
 import { theme } from "../../theme";
+import { renderRating } from "../helpers/rating";
+import productImg from "../../img/product.png";
 
 const useStyles = makeStyles({
   root: {
     width: "260px",
     height: "340px",
     borderRadius: "8px",
-    margin: "auto"
+    margin: "auto",
   },
   media: {
     height: "140px",
   },
   promoMedia: {
     height: "140px",
-    filter: "grayscale(100%)"
+    filter: "grayscale(100%)",
   },
   content: {
     height: "200px",
     padding: "5%",
-    background: theme.palette.background.default
+    background: theme.palette.background.default,
   },
   button: {
     textTransform: "unset",
@@ -89,7 +92,7 @@ export const Item: React.FC<ItemProps> = ({
       <CardMedia
         className={clsx({
           [classes.media]: isInStock,
-          [classes.promoMedia]: !isInStock
+          [classes.promoMedia]: !isInStock,
         })}
         image={productImg}
         title="Contemplative Reptile"

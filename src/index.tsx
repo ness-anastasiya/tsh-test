@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import "typeface-nunito-sans";
 import App from "./App";
 import { theme } from "./theme";
 import reportWebVitals from "./reportWebVitals";

@@ -1,15 +1,16 @@
 import React from "react";
 import { makeStyles, Grid, Button, Typography } from "@material-ui/core";
-import { Pagination as PaginationMU, PaginationItem } from "@material-ui/lab";
+
+import { Pagination as PaginationMU } from "@material-ui/lab";
 import { theme } from "../../theme";
 
 const useStyles = makeStyles({
   button: {
     textTransform: "unset",
-    marginTop: "-3px"
+    marginTop: "-3px",
   },
   disabledText: {
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
   },
 });
 
@@ -39,11 +40,12 @@ export const Pagination: React.FC<PaginationProps> = ({
         {isFirsPageActive ? (
           <Typography variant="body1">First</Typography>
         ) : (
-          <Typography variant="body1" className={classes.disabledText}>First</Typography>
+          <Typography variant="body1" className={classes.disabledText}>
+            First
+          </Typography>
         )}
       </Button>
       <PaginationMU
-        // renderItem={(item) => <PaginationItem {...item} />}
         count={noOfPages}
         siblingCount={0}
         page={page}
@@ -59,7 +61,9 @@ export const Pagination: React.FC<PaginationProps> = ({
         {isLastPageActive ? (
           <Typography variant="body1">Last</Typography>
         ) : (
-          <Typography variant="body1" className={classes.disabledText}>Last</Typography>
+          <Typography variant="body1" className={classes.disabledText}>
+            Last
+          </Typography>
         )}
       </Button>
     </Grid>

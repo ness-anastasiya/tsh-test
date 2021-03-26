@@ -1,14 +1,10 @@
 import { Link } from "react-router-dom";
-import {
-  Grid,
-  TextField,
-  Button,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
 
-import mainImg from "../../img/main.jpg";
-import { theme } from "../../theme";
+import { theme } from "../theme";
+import { StyledTextField } from "../components/common/StyledTextField";
+import { PrimaryButton } from "../components/common/PrimaryButton";
+import mainImg from "../img/main.jpg";
 
 const useStyles = makeStyles({
   root: {
@@ -49,15 +45,10 @@ const useStyles = makeStyles({
     marginBottom: "20px",
   },
   textField: {
-    color: theme.palette.text.secondary,
     fontSize: "14px",
     height: "48px",
-    // border: "1px solid #E0E2EA",
     borderRadius: "8px",
     maxWidth: "500px",
-  },
-  inputLabelProps: {
-    color: "red",
   },
   main: {
     width: "100%",
@@ -75,7 +66,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const LoginPage = () => {
+export const LoginPage: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -100,7 +91,7 @@ export const LoginPage = () => {
             <Typography variant="body1" className={classes.label}>
               Username
             </Typography>
-            <TextField
+            <StyledTextField
               className={classes.username}
               placeholder="Enter username"
               variant="outlined"
@@ -114,7 +105,7 @@ export const LoginPage = () => {
             <Typography variant="body1" className={classes.label}>
               Password
             </Typography>
-            <TextField
+            <StyledTextField
               placeholder="Enter password"
               variant="outlined"
               size="small"
@@ -124,14 +115,9 @@ export const LoginPage = () => {
             />
           </Grid>
           <Link to="/products" className={classes.buttonLink}>
-            <Button
-              variant="contained"
-              color="primary"
-              fullWidth={true}
-              className={classes.button}
-            >
+            <PrimaryButton className={classes.button}>
               <Typography variant="body2">Log in</Typography>
-            </Button>
+            </PrimaryButton>
           </Link>
           <Link to="/">
             <Typography variant="subtitle1">Forgot password?</Typography>

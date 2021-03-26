@@ -6,8 +6,9 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core";
-import { theme } from "../../theme";
 import CloseIcon from "@material-ui/icons/Close";
+
+import { theme } from "../../theme";
 import lostImage from "../../img/product.png";
 
 const useStyles = makeStyles({
@@ -17,14 +18,13 @@ const useStyles = makeStyles({
     borderRadius: "8px",
     marginTop: "22%",
     [theme.breakpoints.up("sm")]: {
-      marginTop: "10%"
+      marginTop: "10%",
     },
   },
   root: {
     padding: 0,
     backgroundSize: "cover",
     overflow: "hidden",
-
   },
   closeButton: {
     position: "absolute",
@@ -35,7 +35,7 @@ const useStyles = makeStyles({
     height: "370px",
     width: "600px",
     overflow: "hidden",
-    objectFit: "cover"
+    objectFit: "cover",
   },
   article: {
     height: "175px",
@@ -45,8 +45,8 @@ const useStyles = makeStyles({
   },
   description: {
     lineHeight: "24px",
-    marginTop: "2%"
-  }
+    marginTop: "2%",
+  },
 });
 
 type ModalDescriptionProps = {
@@ -66,16 +66,13 @@ export const ModalDescription: React.FC<ModalDescriptionProps> = ({
 
   return (
     <div>
-      <Dialog 
-      open={open} 
-      onClose={handleClose} 
-      className={classes.wrapper}
-      BackdropProps={{ style: { opacity: 0.4 } }}
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        className={classes.wrapper}
+        BackdropProps={{ style: { opacity: 0.4 } }}
       >
-        <IconButton
-          className={classes.closeButton}
-          onClick={handleClose}
-        >
+        <IconButton className={classes.closeButton} onClick={handleClose}>
           <CloseIcon />
         </IconButton>
         <DialogContent className={classes.root}>
@@ -84,7 +81,9 @@ export const ModalDescription: React.FC<ModalDescriptionProps> = ({
           </div>
           <div className={classes.article}>
             <Typography variant="h2">{title}</Typography>
-            <Typography variant="h4" className={classes.description}>{description}</Typography>
+            <Typography variant="h4" className={classes.description}>
+              {description}
+            </Typography>
           </div>
         </DialogContent>
       </Dialog>

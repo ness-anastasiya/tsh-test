@@ -1,9 +1,3 @@
-export const USER = {
-  name: "Name",
-  email: "email@email.com",
-  password: "123"
-}
-
 export const ITEMS_PER_PAGE = 8;
 
 export const PRODUCT_COLLECTION = [
@@ -167,7 +161,7 @@ export const PRODUCT_COLLECTION = [
       "Buying Used Electronic Test Equipment What S The Difference Between Used Refurbished Remarketed And Rebuilt",
     rating: 5,
     isInStock: false,
-    isPromo: true,
+    isPromo: false,
   },
   {
     id: "19",

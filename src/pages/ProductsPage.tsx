@@ -10,13 +10,12 @@ import {
   ListItem,
 } from "@material-ui/core";
 
-import { ITEMS_PER_PAGE, PRODUCT_COLLECTION } from "../helpers/data";
-
-import { Item } from "./Item";
-import { Pagination } from "./Pagination";
-import { ToolBar } from "./ToolBar";
-import { ModalDescription } from "./ModalDescription";
-import { EmptyCard } from "./EmptyCard";
+import { ITEMS_PER_PAGE, PRODUCT_COLLECTION } from "../components/helpers/data";
+import { Item } from "../components/products/Item";
+import { Pagination } from "../components/products/Pagination";
+import { ToolBar } from "../components/products/ToolBar";
+import { ModalDescription } from "../components/products/ModalDescription";
+import { EmptyCard } from "../components/products/EmptyCard";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
