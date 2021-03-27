@@ -3,13 +3,14 @@ import { ReactChild } from "react";
 
 type PrimaryButtonType = {
   children: ReactChild;
-  className: any;
+  className: string;
 };
 
 export const PrimaryButton: React.FC<PrimaryButtonType> = ({
   children,
   className,
 }) => {
+
   return (
     <Button
       variant="contained"

@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 
 import { theme } from "../../theme";
-import { renderRating } from "../helpers/rating";
+import { renderRating } from "../../helpers/rating";
 import productImg from "../../img/product.png";
 
 const useStyles = makeStyles({

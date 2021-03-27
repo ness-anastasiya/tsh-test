@@ -22,16 +22,16 @@ export const renderRating = (rating: number) => {
 
   return (
     <Grid container direction="row">
-      {ratingArr.map((item: boolean, index: number) => {
+      {ratingArr.map((item: boolean) => {
         if (item === true) {
           return (
-            <div key={shortid.generate()}>
+            <div key={shortid.generate()} style={{ marginRight: "10px" }}>
               <ActiveStar />
             </div>
           );
         } else {
           return (
-            <div key={shortid.generate()}>
+            <div key={shortid.generate()} style={{ marginRight: "10px" }}>
               <Star />
             </div>
           );

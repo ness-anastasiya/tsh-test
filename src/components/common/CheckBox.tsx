@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, FormControlLabel, Checkbox } from "@material-ui/core";
-import { FreeCheckbox, ActiveCheckbox } from "../helpers/icons";
+import { FreeCheckbox, ActiveCheckbox } from "../../helpers/icons";
 
 type CheckBoxProps = {
   checked: boolean;

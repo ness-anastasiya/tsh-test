@@ -1,7 +1,7 @@
 import { Card, Typography, Grid, makeStyles } from "@material-ui/core";
 
 import { theme } from "../../theme";
-import { Shape } from "../helpers/icons";
+import { Shape } from "../../helpers/icons";
 
 const useStyles = makeStyles({
   root: {

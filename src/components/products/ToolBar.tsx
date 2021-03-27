@@ -17,7 +17,7 @@ import {
 import { StyledTextField } from "../common/StyledTextField";
 import { AvatarImg } from "./AvatarImg";
 import { CheckBox } from "../common/CheckBox";
-import { Search } from "../helpers/icons";
+import { Search } from "../../helpers/icons";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

@@ -10,7 +10,7 @@ import {
   ListItem,
 } from "@material-ui/core";
 
-import { ITEMS_PER_PAGE, PRODUCT_COLLECTION } from "../components/helpers/data";
+import { ITEMS_PER_PAGE, PRODUCT_COLLECTION } from "../helpers/data";
 import { Item } from "../components/products/Item";
 import { Pagination } from "../components/products/Pagination";
 import { ToolBar } from "../components/products/ToolBar";
@@ -71,7 +71,7 @@ export const ProductsPage = () => {
   };
 
   const [page, setPage] = React.useState(1);
-  const handleChange = (_: any, value: number) => {
+  const handleChange = (_: React.BaseSyntheticEvent, value: number) => {
     setPage(value);
   };
 

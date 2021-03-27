@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 type PaginationProps = {
   noOfPages: number;
   page: number;
-  handleChange: (_: any, value: number) => void;
+  handleChange: (_: React.BaseSyntheticEvent, value: number) => void;
 };
 
 export const Pagination: React.FC<PaginationProps> = ({
