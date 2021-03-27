@@ -80,7 +80,8 @@ export const theme = createMuiTheme({
         fontFamily: "Nunito"
       },
       button: {
-        fontFamily: "Nunito"
+        fontFamily: "Nunito",
+        color: "#FFFFFF"
       }
     },
   });

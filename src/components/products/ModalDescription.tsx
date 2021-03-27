@@ -34,8 +34,11 @@ const useStyles = makeStyles({
   img: {
     height: "370px",
     width: "600px",
-    overflow: "hidden",
     objectFit: "cover",
+  },
+  imgContainer: {
+    height: "370px",
+    width: "600px",
   },
   article: {
     height: "175px",
@@ -76,7 +79,7 @@ export const ModalDescription: React.FC<ModalDescriptionProps> = ({
           <CloseIcon />
         </IconButton>
         <DialogContent className={classes.root}>
-          <div>
+          <div className={classes.imgContainer}>
             <img src={lostImage} className={classes.img} alt="Product" />
           </div>
           <div className={classes.article}>

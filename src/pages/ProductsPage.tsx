@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     paginationContainer: {
-      paddingBottom: "2%",
+      paddingBottom: "1%",
     },
   })
 );

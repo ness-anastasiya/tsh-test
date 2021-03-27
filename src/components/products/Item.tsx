@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 
+import { UnavaliableButton } from "../common/UnavaliableButton";
 import { theme } from "../../theme";
 import { renderRating } from "../../helpers/rating";
 import productImg from "../../img/product.png";
@@ -118,26 +119,22 @@ export const Item: React.FC<ItemProps> = ({
         {isInStock ? (
           <Button
             id={id}
-            className={classes.button}
             variant="contained"
             color="primary"
             fullWidth={true}
             onClick={onClick}
+            className={classes.button}
           >
             Show details
           </Button>
         ) : (
-          <Button
-            className={classes.button}
-            disabled={true}
-            variant="contained"
-            color="secondary"
-            fullWidth={true}
-          >
+          <UnavaliableButton fullWidth={true} disabled={true}>
             Unavailable
-          </Button>
+          </UnavaliableButton>
         )}
       </CardContent>
     </Card>
   );
 };
+
+

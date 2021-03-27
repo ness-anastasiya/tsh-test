@@ -16,6 +16,9 @@ const useStyles = makeStyles({
     justifyContent: "space-between",
     fontFamily: "Nunito, san-serif",
     fontSize: "16px",
+    "&:focus": {
+      outline: "none !important"
+    },
   },
 });
 
