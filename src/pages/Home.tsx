@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     padding: "0 60px",
   },
 });
-export const Home = () => {
+export const Home: React.FC = () => {
   const classes = useStyles();
 
   return (

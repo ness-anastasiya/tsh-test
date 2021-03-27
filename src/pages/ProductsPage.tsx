@@ -12,10 +12,10 @@ import {
 
 import { ITEMS_PER_PAGE, PRODUCT_COLLECTION } from "../helpers/data";
 import { Item } from "../components/products/Item";
-import { Pagination } from "../components/products/Pagination";
 import { ToolBar } from "../components/products/ToolBar";
 import { ModalDescription } from "../components/products/ModalDescription";
 import { EmptyCard } from "../components/products/EmptyCard";
+import { Pagination } from "../components/products/Pagination";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -46,16 +46,17 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     paginationContainer: {
-      paddingBottom: "3%",
+      paddingBottom: "2%",
     },
   })
 );
 
-export const ProductsPage = () => {
+export const ProductsPage: React.FC = () => {
   const classes = useStyles();
 
   const [search, setSearch] = React.useState("");
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPage(1);
     setSearch(event.target.value);
   };
 
@@ -64,6 +65,7 @@ export const ProductsPage = () => {
     isPromo: false,
   });
   const handleChangeState = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPage(1);
     setCheckboxData({
       ...checkboxData,
       [event.target.name]: event.target.checked,
@@ -71,8 +73,14 @@ export const ProductsPage = () => {
   };
 
   const [page, setPage] = React.useState(1);
-  const handleChange = (_: React.BaseSyntheticEvent, value: number) => {
-    setPage(value);
+  const handleChange = (e: React.BaseSyntheticEvent) => {
+    if (e.target.innerHTML === "First") {
+      return setPage(page - 1);
+    }
+    if (e.target.innerHTML === "Last") {
+      return setPage(page + 1);
+    }
+    return setPage(Number(e.target.innerHTML));
   };
 
   const [modalData, setModalData] = React.useState({
@@ -171,11 +179,13 @@ export const ProductsPage = () => {
         )}
         <Grid className={classes.paginationContainer}>
           {filteredList.length > ITEMS_PER_PAGE && (
-            <Pagination
-              noOfPages={noOfPages}
-              page={page}
-              handleChange={handleChange}
-            />
+            <div>
+              <Pagination
+                noOfPages={noOfPages}
+                productPage={page}
+                handleChange={handleChange}
+              />
+            </div>
           )}
         </Grid>
       </Paper>
